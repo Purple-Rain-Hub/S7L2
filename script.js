@@ -26,4 +26,15 @@ btnCancella.addEventListener("click", function(e){
     input.value = "";
 });
 
+// esercizio 2
+const timer = document.querySelector("h1");
+let i = JSON.parse(sessionStorage.getItem("time")) || 1;
 
+setInterval(timerFunc, 1000)
+
+function timerFunc(){
+sessionStorage.setItem("time", i)
+timer.innerHTML = `sei sul sito da: ${sessionStorage.getItem("time")} secondi`
+
+i++
+}
